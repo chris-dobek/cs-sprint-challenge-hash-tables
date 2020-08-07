@@ -1,13 +1,13 @@
 def has_negatives(a):
     
-    dict = {}
+    d = dict()
 
     result = []
 
     for i in a:
         
-        dict[i] = 1
-        if i != 0 and -i in dict:
+        d[i] = 1
+        if i != 0 and -i in d:
             result.append(abs(i))
 
     return result

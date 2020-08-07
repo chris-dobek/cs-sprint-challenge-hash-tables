@@ -1,8 +1,14 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+
+    d = dict()
+
+    for arr in arrays:
+        for i in arr:
+            if i in d:
+                d[i] += 1
+            else:
+                d[i] = 1
+    result = [x for x in d if d[x]==len(arrays)]
 
     return result
 
