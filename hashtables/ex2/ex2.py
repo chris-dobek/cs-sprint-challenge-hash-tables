@@ -6,9 +6,24 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    # Create a dictionary
+    dict = {}
+
+    # Store the length of Tickets into a variable
+    route = [None] * length
+
+    for ticket in tickets:
+        # Set the ticket source to the ticket destination in the dict
+        dict[ticket.source] = ticket.destination
+    
+    # Reset the destination in the dict to none
+    destination = dict['NONE']
+
+    # Search through the tickets through it's length
+    for flight in range(length):
+        # Set the route flight to the destination
+        route[flight] = destination
+        # Set the destination to the dict
+        destination = dict[destination]
 
     return route
